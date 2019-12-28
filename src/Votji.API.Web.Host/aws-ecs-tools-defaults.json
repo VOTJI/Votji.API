@@ -1,0 +1,27 @@
+
+{
+    "region" : "us-west-2",
+    "profile" : "votji",
+    "configuration" : "Release",
+    "tag"           : "votji:votjiapi",
+    "docker-build-working-dir" : "../../",
+    "cluster"                  : "Votji",
+    "launch-type"              : "FARGATE",
+    "launch-subnets"           : "subnet-1d1d1256,subnet-e53fdd9d,subnet-d14ab78c,subnet-63661248",
+    "launch-security-groups"   : "sg-67954821",
+    "assign-public-ip"         : true,
+    "task-definition-name"     : "VotjiApi",
+    "task-cpu"                 : "256",
+    "task-memory"              : "512",
+    "task-definition-task-role" : "arn:aws:iam::755745637954:role/ecs_execution_VotjiApi",
+    "task-execution-role"       : "ecs_execution_VotjiApi",
+    "container-name"            : "VotjiApi",
+    "container-port-mapping"    : "9009:80",
+    "container-environment-variables" : "\"ASPNETCORE_ENVIRONMENT\"=\"Production\"",
+    "skip-image-push"                 : false,
+    "cluster-service"                 : "VotjiApi",
+    "desired-count"                   : 1,
+    "deployment-minimum-healthy-percent" : 50,
+    "deployment-maximum-percent"         : 200,
+    "vstoolkit-deployment-mode"          : "DeployService"
+}
